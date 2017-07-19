@@ -24,6 +24,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
 
+    private Button hartaButton;
     private Button buttonRegister;
     private EditText editTextMail;
     private EditText editTextPassword;
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         progressDialog = new ProgressDialog(this);
 
         buttonRegister=(Button)findViewById(R.id.buttonRegister);
+        hartaButton = (Button)findViewById(R.id.hartaButton);
 
         editTextMail=(EditText)findViewById(R.id.editTextEmail);
         editTextPassword=(EditText)findViewById(R.id.editTextPassword);
@@ -89,6 +91,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         {
                             Toast.makeText(MainActivity.this,"Could not register, please try again.",Toast.LENGTH_SHORT).show();
                         }
+                        progressDialog.cancel();
                     }
                 });
     }
@@ -102,8 +105,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         else if (v == textViewSignin)
         {
-            setContentView(R.layout.login);
             Intent i = new Intent(this, login.class);
+            startActivity(i);
+        }else if(v == hartaButton){
+            Intent i = new Intent(this, Harta.class);
+            startActivity(i);
         }
     }
 }

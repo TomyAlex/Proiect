@@ -21,20 +21,20 @@ public class login extends AppCompatActivity implements View.OnClickListener{
     private TextView tvRegisterLink;
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 
         tvRegisterLink = (TextView)findViewById(R.id.tvRegisterLink);
         tvRegisterLink.setOnClickListener(this);
+
     }
 
     @Override
     public void onClick(View v) {
-        if(v == tvRegisterLink)
-        {
-            setContentView(R.layout.activity_main);
+        if(v == tvRegisterLink){
             Intent i = new Intent(this,MainActivity.class);
+            startActivity(i);
         }
     }
 }
