@@ -4,10 +4,10 @@
     <string name="enter_your_password">Enter your password</string>
     <string name="register_user">Register User</string>
     <string name="already_registered_sign_in_here">Already Registered? Sign in here.</string>
-    <string name="username">Username</string>
+    <string name="enter_mail">Enter mail</string>
     <string name="password">Password</string>
-    <string name="login">Login</string>
+    <string name="login">Log in</string>
     <string name="register_here">Register here!</string>
     <string name="title_activity_harta">Harta</string>
-    <string name="harta">Harta</string>
+    <string name="log_out">Log out</string>
 </resources>

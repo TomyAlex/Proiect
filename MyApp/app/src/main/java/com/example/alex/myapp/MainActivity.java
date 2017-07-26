@@ -2,10 +2,12 @@ package com.example.alex.myapp;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.drm.ProcessedData;
 import android.graphics.Color;
 import android.os.Process;
 import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -24,7 +26,6 @@ import com.google.firebase.auth.FirebaseAuth;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
 
-    private Button hartaButton;
     private Button buttonRegister;
     private EditText editTextMail;
     private EditText editTextPassword;
@@ -42,7 +43,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         progressDialog = new ProgressDialog(this);
 
         buttonRegister=(Button)findViewById(R.id.buttonRegister);
-        hartaButton = (Button)findViewById(R.id.hartaButton);
 
         editTextMail=(EditText)findViewById(R.id.editTextEmail);
         editTextPassword=(EditText)findViewById(R.id.editTextPassword);
@@ -86,6 +86,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         {
                             //User is successfully registered and logged in
                             Toast.makeText(MainActivity.this,"Registered successfully.",Toast.LENGTH_SHORT).show();
+                            //Permision must be here!
+                            startActivity(new Intent(getApplicationContext(), Harta.class));
                         }
                         else
                         {
@@ -105,11 +107,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         else if (v == textViewSignin)
         {
-            Intent i = new Intent(this, login.class);
-            startActivity(i);
-        }else if(v == hartaButton){
-            Intent i = new Intent(this, Harta.class);
-            startActivity(i);
+            startActivity( new Intent(this, login.class));
         }
     }
 }
