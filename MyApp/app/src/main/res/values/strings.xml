@@ -10,4 +10,9 @@
     <string name="register_here">Register here!</string>
     <string name="title_activity_harta">Harta</string>
     <string name="log_out">Log out</string>
+    <string name="search">Search</string>
+    <string name="search_destination">Search Destination</string>
+    <string name="change_type">Change Map</string>
+    <string name="zoomIn">^</string>
+    <string name="zoomOut">v</string>
 </resources>

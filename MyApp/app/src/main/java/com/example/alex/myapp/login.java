@@ -92,7 +92,7 @@ public class login extends AppCompatActivity implements View.OnClickListener{
                         if(task.isSuccessful()){
                             //Start the map activity
                             //Permision must be here!
-                            startActivity(new Intent(getApplicationContext(), Harta.class););
+                            startActivity(new Intent(getApplicationContext(), Harta.class));
                         }
                     }
                 });
